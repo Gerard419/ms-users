@@ -21,7 +21,4 @@ public class UserRequestDTO{
 
     @NotNull(message = "El rol no puede estar nulo")
     private Rol rol;
-
-    @NotBlank(message = "La contrasena no puede estar en blanco")
-    private String contrasena;
 }
