@@ -49,8 +49,7 @@ public class UserService {
         User user = new User(
                 dto.getNombre(),
                 dto.getCorreo(),
-                dto.getRol(),
-                dto.getContrasena()
+                dto.getRol()
         );
         return mapToDTO(userRepository.save(user));
     }
@@ -61,7 +60,6 @@ public class UserService {
             existe.setNombre(dto.getNombre());
             existe.setCorreo(dto.getCorreo());
             existe.setRol(dto.getRol());
-            existe.setContrasena(dto.getContrasena());
             return mapToDTO(userRepository.save(existe));
         }).orElseThrow(() -> new UserNotFoundException("Usuario no encontrado para actualizar"));
     }
