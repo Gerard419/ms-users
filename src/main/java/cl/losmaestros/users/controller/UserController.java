@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/manage")
+@RequestMapping("/users")
 @RequiredArgsConstructor
 public class UserController{
     private final UserService userService;
@@ -45,7 +45,7 @@ public class UserController{
         return ResponseEntity.ok(userService.update(correo, dto));
     }
     //borrar un usuario por su correo
-    @DeleteMapping
+    @DeleteMapping("correo/{correo}")
     public ResponseEntity<Void> deleteUser(@PathVariable String correo){
         userService.deleteByCorreo(correo);
         return ResponseEntity.noContent().build();
